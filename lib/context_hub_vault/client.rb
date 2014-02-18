@@ -16,6 +16,10 @@ module ContextHubVault
       self.class.headers('HTTP_CARBON_APP_ID' => app_id) if app_id
     end
 
+    def find_by_id(id)
+      search('vault_info.vault_id' => id)
+    end
+
     def search(query)
       get '/vaults', body: { query: query }
     end
