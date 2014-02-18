@@ -3,6 +3,7 @@ require 'httparty'
 module ContextHubVault
   class Client
     include HTTParty
+    format :json
 
     def initialize(host: ContextHubVault.host, auth_token: ContextHubVault.auth_token, version: ContextHubVault.version, app_id: ContextHubVault.app_id)
       if http_prefix(host)
@@ -15,10 +16,19 @@ module ContextHubVault
       self.class.headers('HTTP_CARBON_APP_ID' => app_id) if app_id
     end
 
+    def create(container, data = {})
+      data.merge container: container
+      post '/vaults', body: data
+    end
+
     private
 
     def http_prefix(host)
       host.downcase.start_with?('http://', 'https://')
+    end
+
+    def post(path, options = {})
+      self.class.post path, options
     end
   end
 end
