@@ -2,7 +2,7 @@
 
 [![Code Climate](https://codeclimate.com/github/chaione/context_hub_vault.png)](https://codeclimate.com/github/chaione/context_hub_vault/badges)
 
-TODO: Write a gem description
+Ruby client for the ContextHUB vault
 
 ## Installation
 
