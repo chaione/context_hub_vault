@@ -35,6 +35,10 @@ module ContextHubVault
       patch "/vaults/#{id}", body: data
     end
 
+    def destroy(id, data = {})
+      delete "/vaults/#{id}"
+    end
+
     private
 
     def http_prefix(host)
@@ -51,6 +55,10 @@ module ContextHubVault
 
     def patch(path, options = {})
       self.class.patch path, options
+    end
+
+    def delete(path, options = {})
+      self.class.delete path, options
     end
   end
 end
