@@ -17,7 +17,7 @@ module ContextHubVault
     end
 
     def find_by_id(id)
-      search('vault_info.vault_id' => id)
+      search('vault_info.vault_id' => id).first
     end
 
     def search(query = {})
