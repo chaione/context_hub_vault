@@ -2,6 +2,8 @@
 
 [![Code Climate](https://codeclimate.com/github/chaione/context_hub_vault.png)](https://codeclimate.com/github/chaione/context_hub_vault/badges)
 
+[![Build Status](https://travis-ci.org/chaione/context_hub_vault.png?branch=master)](https://travis-ci.org/chaione/context_hub_vault)
+
 Ruby client for the ContextHUB vault
 
 ## Installation
