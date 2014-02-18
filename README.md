@@ -20,7 +20,12 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+client = ContextHubVault::Client.new(host: 'http://localhost:3000', app_id: '1', auth_token: ENV['AUTH_TOKEN'])
+c.create('music', name: 'Miles Davis', music: 'jazz')
+c.create('music', name: 'Monk', music: 'jazz')
+jazz_musicians = c.search(music: 'jazz')
+```
 
 ## Contributing
 
