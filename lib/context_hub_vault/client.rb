@@ -29,6 +29,10 @@ module ContextHubVault
       post '/vaults', body: data
     end
 
+    def update(id, data = {})
+      patch "/vaults/#{id}", body: data
+    end
+
     private
 
     def http_prefix(host)
@@ -41,6 +45,11 @@ module ContextHubVault
 
     def get(path, options = {})
       self.class.get path, options
+    end
+  end
+
+    def patch(path, options = {})
+      self.class.patch path, options
     end
   end
 end
