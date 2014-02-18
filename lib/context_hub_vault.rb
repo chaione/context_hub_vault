@@ -1,4 +1,5 @@
 require 'context_hub_vault/version'
+require 'context_hub_vault/client'
 
 module ContextHubVault
   class << self
