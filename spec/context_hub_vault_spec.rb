@@ -16,6 +16,6 @@ describe ContextHubVault do
     expect(ContextHubVault.host).to       eq('example.com')
     expect(ContextHubVault.app_id).to     eq(50)
     expect(ContextHubVault.auth_token).to eq('qwertyasdfqwerty')
-    expect(ContextHubVault.version).to     eq(42)
+    expect(ContextHubVault.version).to    eq(42)
   end
 end
