@@ -20,11 +20,13 @@ module ContextHubVault
       search('vault_info.vault_id' => id)
     end
 
-    def search(query)
+    def search(query = {})
       get '/vaults', body: { query: query }
     end
 
-    def create(container: 'default', data: {})
+    def create(container, data = {})
+      fail 'Must include the container' unless container
+
       data.merge! container: container
       post '/vaults', body: data
     end
@@ -46,7 +48,6 @@ module ContextHubVault
     def get(path, options = {})
       self.class.get path, options
     end
-  end
 
     def patch(path, options = {})
       self.class.patch path, options
