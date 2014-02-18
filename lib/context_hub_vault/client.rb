@@ -16,8 +16,12 @@ module ContextHubVault
       self.class.headers('HTTP_CARBON_APP_ID' => app_id) if app_id
     end
 
-    def create(container, data = {})
-      data.merge container: container
+    def search(query)
+      get '/vaults', body: { query: query }
+    end
+
+    def create(container: 'default', data: {})
+      data.merge! container: container
       post '/vaults', body: data
     end
 
@@ -29,6 +33,10 @@ module ContextHubVault
 
     def post(path, options = {})
       self.class.post path, options
+    end
+
+    def get(path, options = {})
+      self.class.get path, options
     end
   end
 end
