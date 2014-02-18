@@ -16,14 +16,28 @@ module ContextHubVault
       self.class.headers('HTTP_CARBON_APP_ID' => app_id) if app_id
     end
 
+    # Find a vault by it's vault_id
+    #
+    # @param id [String] vault_id
+    # @return [Hash] The full vault data structure that matches the vault_id
     def find_by_id(id)
       search('vault_info.vault_id' => id).first
     end
 
+    # Search the vault for items that match your query params
+    #
+    # @param query [Hash] search by keyword
+    # @param query [String] javascript language search
+    # @return [Array] An array of the matching search results
     def search(query = {})
       get '/vaults', body: { query: query }
     end
 
+    # Create new vault data
+    #
+    # @param container [String] The name of the vault container
+    # @param data [Hash] A hash of key/value pairs to store in the vault
+    # @return [Hash] The newly created vault
     def create(container, data = {})
       fail 'Must include the container' unless container
 
@@ -31,10 +45,18 @@ module ContextHubVault
       post '/vaults', body: data
     end
 
+    # Update vault data
+    #
+    # @param id [String] vault_id
+    # @param data [Hash] Data to update the vault with
+    # @return [Hash] The updated vault data structure
     def update(id, data = {})
       patch "/vaults/#{id}", body: data
     end
 
+    # Delete a vault by vault_id
+    #
+    # @param id [String] vault_id
     def destroy(id, data = {})
       delete "/vaults/#{id}"
     end
