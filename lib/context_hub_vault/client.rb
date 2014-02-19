@@ -5,6 +5,13 @@ module ContextHubVault
     include HTTParty
     format :json
 
+    %i[post get patch delete].each do |verb|
+      define_method(verb) do |path, options = {}|
+        self.class.send(verb, path, options)
+      end
+      private verb
+    end
+
     def initialize(host: ContextHubVault.host, auth_token: ContextHubVault.auth_token, version: ContextHubVault.version, app_id: ContextHubVault.app_id)
       if http_prefix(host)
         self.class.base_uri "#{host}/api"
@@ -65,22 +72,6 @@ module ContextHubVault
 
     def http_prefix(host)
       host.downcase.start_with?('http://', 'https://')
-    end
-
-    def post(path, options = {})
-      self.class.post path, options
-    end
-
-    def get(path, options = {})
-      self.class.get path, options
-    end
-
-    def patch(path, options = {})
-      self.class.patch path, options
-    end
-
-    def delete(path, options = {})
-      self.class.delete path, options
     end
   end
 end
