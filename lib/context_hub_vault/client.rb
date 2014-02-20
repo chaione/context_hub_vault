@@ -64,6 +64,7 @@ module ContextHubVault
     # Delete a vault by vault_id
     #
     # @param id [String] vault_id
+    # @return [Object] Response Object
     def destroy(id, data = {})
       delete "/vaults/#{id}"
     end
