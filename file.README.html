@@ -61,53 +61,66 @@
 
     <iframe id="search_frame"></iframe>
 
-    <div id="content"><div id='filecontents'><h1 id="contexthubvault">ContextHubVault</h1>
+    <div id="content"><div id='filecontents'>
+<h1 id="label-ContextHubVault">ContextHubVault</h1>
 
-<p><a href="https://codeclimate.com/github/chaione/context_hub_vault/badges"><img src="https://codeclimate.com/github/chaione/context_hub_vault.png" alt="Code Climate" /></a></p>
+<p><img src="https://codeclimate.com/github/chaione/context_hub_vault.png" />]</p>
 
-<p><a href="https://travis-ci.org/chaione/context_hub_vault"><img src="https://travis-ci.org/chaione/context_hub_vault.png?branch=master" alt="Build Status" /></a></p>
+<p><a
+href="https://travis-ci.org/chaione/context_hub_vault.png?branch=master">{Build
+Status</a>]</p>
 
 <p>Ruby client for the ContextHUB vault</p>
 
-<h2 id="installation">Installation</h2>
+<h2 id="label-Installation">Installation</h2>
 
-<p>Add this line to your application’s Gemfile:</p>
+<p>Add this line to your application&#39;s Gemfile:</p>
 
-<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>context_hub_vault</span><span class='tstring_end'>&#39;</span></span>
-</code></pre>
+<pre class="code ruby"><code class="ruby"><span class='id identifier rubyid_gem'>gem</span> <span class='tstring'><span class='tstring_beg'>&#39;</span><span class='tstring_content'>context_hub_vault</span><span class='tstring_end'>&#39;</span></span></code></pre>
 
 <p>And then execute:</p>
 
-<pre class="code ruby"><code class="ruby">$ bundle
-</code></pre>
+<pre class="code ruby"><code class="ruby">$ bundle</code></pre>
 
 <p>Or install it yourself as:</p>
 
-<pre class="code ruby"><code class="ruby">$ gem install context_hub_vault
-</code></pre>
+<pre class="code ruby"><code class="ruby">$ gem install context_hub_vault</code></pre>
 
-<h2 id="usage">Usage</h2>
+<h2 id="label-Usage">Usage</h2>
 
-<p><code>ruby
-client = ContextHubVault::Client.new(host: 'http://localhost:3000', app_id: '1', auth_token: ENV['AUTH_TOKEN'])
-c.create('music', name: 'Miles Davis', style: 'jazz')
-c.create('music', name: 'Monk', style: 'jazz')
-jazz_musicians = c.search(style: 'jazz')
-</code></p>
+<pre class="ruby"><span class="ruby-identifier">client</span> = <span class="ruby-constant">ContextHubVault</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">host</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;http://localhost:3000&#39;</span>, <span class="ruby-identifier">app_id</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;1&#39;</span>, <span class="ruby-identifier">auth_token</span><span class="ruby-operator">:</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">&#39;AUTH_TOKEN&#39;</span>])
 
-<h2 id="contributing">Contributing</h2>
+<span class="ruby-identifier">c</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&#39;music&#39;</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;Miles Davis&#39;</span>, <span class="ruby-identifier">style</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;jazz&#39;</span>)
 
-<ol>
-  <li>Fork it ( http://github.com/<my-github-username>/context_hub_vault/fork )</my-github-username></li>
-  <li>Create your feature branch (<code>git checkout -b my-new-feature</code>)</li>
-  <li>Commit your changes (<code>git commit -am 'Add some feature'</code>)</li>
-  <li>Push to the branch (<code>git push origin my-new-feature</code>)</li>
-  <li>Create new Pull Request</li>
-</ol>
+<span class="ruby-identifier">c</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&#39;music&#39;</span>, <span class="ruby-identifier">name</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;Monk&#39;</span>, <span class="ruby-identifier">style</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;jazz&#39;</span>)
+
+<span class="ruby-identifier">jazz_musicians</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">search</span>(<span class="ruby-identifier">style</span><span class="ruby-operator">:</span> <span class="ruby-string">&#39;jazz&#39;</span>)
+</pre>
+
+<h2 id="label-Docs">Docs</h2>
+
+<p><a
+href="http://chaione.github.io/context_hub_vault/">chaione.github.io/context_hub_vault/</a></p>
+
+<h2 id="label-Contributing">Contributing</h2>
+<ol><li>
+<p>Fork it ( <a
+href="http://github.com/<my-github-username>/context_hub_vault/fork“>github.com/<my-github-username>/context_hub_vault/fork</a>
+)</p>
+</li><li>
+<p>Create your feature branch (<code>git checkout -b my-new-feature</code>)</p>
+</li><li>
+<p>Commit your changes (<code>git commit -am &#39;Add some
+feature&#39;</code>)</p>
+</li><li>
+<p>Push to the branch (<code>git push origin my-new-feature</code>)</p>
+</li><li>
+<p>Create new Pull Request</p>
+</li></ol>
 </div></div>
 
     <div id="footer">
-  Generated on Thu Feb 20 07:58:54 2014 by
+  Generated on Thu Feb 20 08:35:02 2014 by
   <a href="http://yardoc.org" title="Yay! A Ruby Documentation Tool" target="_parent">yard</a>
   0.8.7.3 (ruby-2.0.0).
 </div>
