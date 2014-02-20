@@ -29,22 +29,6 @@ file GH_PAGES_REF => BUILD_DIR do
   cd PROJECT_ROOT do
     repo_url = `git config --get remote.#{remote_name}.url`.strip
   end
-
-  cd BUILD_DIR do
-    sh 'git init'
-    sh 'git remote add #{remote_name} #{repo_url}'
-    sh 'git fetch #{remote_name}'
-
-    if `git branch -r` =~ /gh-pages/
-      sh 'git checkout gh-pages'
-    else
-      sh 'git checkout --orphan gh-pages'
-      sh 'touch index.html'
-      sh 'git add .'
-      sh 'git commit -m \'initial gh-pages commit\''
-      sh 'git push #{remote_name} gh-pages'
-    end
-  end
 end
 
 # Alias to something meaningful
